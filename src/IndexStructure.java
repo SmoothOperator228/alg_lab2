@@ -156,14 +156,12 @@ public class IndexStructure {
     }
 
     private int search(ArrayList<DataNote> list, String key){
-        int comp = 1;
         int k = log2(list.size());
         int i = (int)Math.pow(2, k);
         int cmp = list.get(i).key.compareTo(key);
         if(cmp > 0){
             int pow = k - 1;
             while(true){
-                System.out.println(comp++);
                 int delta = (int) Math.pow(2, pow);
                 if(cmp > 0) {
                     i = i - ((delta / 2) + 1);
@@ -181,7 +179,6 @@ public class IndexStructure {
             i = list.size() + 1 - (int)Math.pow(2, l);
             int pow = l - 1;
             while(true){
-                System.out.println(comp++);
                 int delta = (int)Math.pow(2, pow);
                 if(cmp < 0){
                     i = i + ((delta / 2) + 1);
